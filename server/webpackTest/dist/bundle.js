@@ -1,0 +1,2 @@
+(()=>{"use strict";const e="/webpackTest/dist/images/timg_debbdb995e644ec6d7e38eecbf907c27.jpg";let c=new Image;c.src=e,document.body.appendChild(c),console.log("img",e),console.log("index.js is called"),console.log("fn is called")})();
+//# sourceMappingURL=bundle.js.map

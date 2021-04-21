@@ -1,0 +1,8 @@
+my-app文件是负责前端的项目,它通过输入指令npm start 运行后需要再运行 server文件下的后端程序后端请通过输入指令node index.js运行
+
+react程序在浏览器打开后在上方的路由跳转 
+Game是学习React官方文档时写的三子棋demo
+JWTest是通过后端鉴权测试用
+ChatRoom测试的是Socket.IO
+Time是自己为了了解React生命周期性质做的demo.以及在生命周期处理副作用
+TodoList是学习Redux时写的Demo,全局状态的管理.

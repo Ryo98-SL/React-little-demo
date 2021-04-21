@@ -1,0 +1,33 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "socket": "nodemon socketServer.js",
+    "dev":"webpack-dev-server"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "css-loader": "^5.2.0",
+    "file-loader": "^6.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "koa": "^2.13.1",
+    "koa-body": "^4.2.0",
+    "koa-jwt": "^4.0.1",
+    "koa-router": "^10.0.0",
+    "koa-static-cache": "^5.1.4",
+    "mysql2": "^2.2.5",
+    "socket.io": "^4.0.1",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.31.0"
+  },
+  "devDependencies": {
+    "html-webpack-plugin": "^5.3.1",
+    "mini-css-extract-plugin": "^1.4.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.2"
+  }
+}

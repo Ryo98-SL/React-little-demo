@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/socket.io/socket.io.js" ></script>
+</head>
+<body>
+    <button id="btn1">connect server</button>
+    <input  />
+    <button id="btn2">send</button>
+</body>
+<script>
+    let sockect
+    let btn1 = document.querySelector('#btn1')
+    let btn2 = document.querySelector('#btn2')
+    let input = document.querySelector('input')
+    btn1.onclick=()=>{
+        console.log('click');
+        if(sockect==null)sockect = io();
+        sockect.on('connect',()=>{
+        console.log('connection');
+        btn1.innerHTML=sockect.id
+    })
+    sockect.on("test",(param1,param2)=>{
+        console.log('test',param1,param2);
+    })
+    sockect.on("test2",(data)=>{
+        console.log('test2',data);
+    })    
+    sockect.on('showChats',(data)=>{
+        
+        showChatsOnDom(data)
+    })
+    btn2.onclick=()=>{
+
+        if(sockect){
+            
+            sockect.emit('message',sockect.id,input.value)
+        }
+    }
+    }
+
+    function showChatsOnDom({id,content,date}){
+        let div = document.createElement('div')
+        let span = document.createElement('span')
+        span.innerHTML = `${id} say: ${content} ,${date}`
+        if(id==sockect.id){
+            span.style.color ='blue'
+        }
+        div.appendChild(span)
+        document.body.appendChild(div)
+    }
+
+
+</script>
+</html>
